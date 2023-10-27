@@ -1,0 +1,140 @@
+---
+title: "Git and GitHub: A Beginner's Guide"
+author: 
+    - name: "Julius Welzel"
+format:
+    revealjs:
+        slide-number: true
+        chalkboard:
+            buttons: false
+        preview-links: auto
+        smaller: true
+style: style.css
+---
+
+## Introducing Git and GitHub: Your New Best Friend
+
+Git:
+
+- Version Control: Tracks and manages changes to files
+- Local Repository: A local storage of your files's history (no more *text_version1.doc*, *text_version2.doc*, *text_versionfinal.doc*, *text_versionfinalfinal.doc*)
+- Commits: Snapshots of changes which you want to keep
+
+GitHub:
+
+- Remote Hosting: Online platform for storing and sharing Git repositories.
+- Pull Requests: Propose changes to projects.
+- Branches: Different versions of a project.
+
+---
+
+## Overview
+
+![](pics/git-overview.png)
+
+
+---
+
+## Git Workflow
+
+```{mermaid}	
+graph LR
+
+    %% Defining Nodes
+    A[working directory] -->|add| B[staging area]
+    B -->|commit| C[local repo]
+    C -->|push| D[remote repo]
+
+    %% Defining Additional Actions
+    B -->|merge| C
+    C -->|fetch| D
+
+    %% Styling
+    class A,B,C,D rect;
+    classDef rect color:#fff, stroke:#d62728;
+    class C rect1;
+    classDef rect1 color:#fff;
+    class D rect2;
+    classDef rect2  color:#fff;
+
+    %% Adding Subgraphs for Local and Remote
+    subgraph Local
+        A
+        B
+        C
+    end
+
+    subgraph Remote
+        D
+    end
+
+```
+
+---
+
+## Git Workflow: Local Environment
+
+The Git workflow involves several steps, divided between the local environment and the remote repository.
+
+1. Local Environment:
+
+    - Working Directory: This is where your files live before they are staged.
+    - Staging Area: Files are added to the staging area before they are committed.
+    - Once files are committed, they reside in the local repository.
+
+2. Operations:
+
+    - `add`: Moves changes from the **working directory** to the **staging area**.
+    - `commit`: Moves changes from the **staging area** to the **local repo**.
+    - `merge`:  Merges changes from different branches.
+
+---
+
+## Git Workflow: Remote Repository
+
+This is where your commits are stored after they have been pushed.
+
+Operations:
+
+- `push`- Sends commits from the **local repo** to the **remote repo**.
+- `fetch`- Brings changes from the **remote repo** to your **local repo** (without merging them).
+
+The workflow typically goes from making changes in the **working directory**, committing them to the **local repo**, and finally pushing them to the **remote repo**.
+
+---
+
+## Initiating Git: Let's Get Started
+
+- `git init`: Think of this as your way of telling Git, "Hey, Git, be my friend!"
+- Initializing a new Git repository is like opening a diary, but cooler!
+
+---
+
+## Clone: Copy-Paste for Grown-Ups
+
+- `git clone <repository_url>`: It's like getting a copy of your friend's cool toy.
+- No more, "Can I borrow your toy?" Just clone it!
+
+---
+
+## Commit: Saving the Day
+
+- `git add <file>`: Staging files is like packing your backpack for an adventure.
+- `git commit -m "Commit message"`: Think of this as writing a note about your adventure in your diary. "Today, I slayed some code dragons!"
+
+---
+
+## Push and Pull: The Tug of War
+
+- `git push origin <branch_name>`: Pushing is like sending your diary to your secret lair in the cloud.
+- `git pull origin <branch_name>`: Pulling is like getting back your diary when you're ready for more adventures.
+
+
+---
+
+## Conclusion: Welcome to the Git World!
+
+- You've learned the basics of Git, your new best friend.
+- Init, Clone, Commit, Push, and Pull are your superpowers in the world of coding.
+- Keep practicing, and you'll be a Git superhero in no time!
+
