@@ -40,24 +40,7 @@ GitHub:
 ```{mermaid}	
 graph LR
 
-    %% Defining Nodes
-    A[working directory] -->|add| B[staging area]
-    B -->|commit| C[local repo]
-    C -->|push| D[remote repo]
-
-    %% Defining Additional Actions
-    B -->|merge| C
-    C -->|fetch| D
-
-    %% Styling
-    class A,B,C,D rect;
-    classDef rect color:#fff, stroke:#d62728;
-    class C rect1;
-    classDef rect1 color:#fff;
-    class D rect2;
-    classDef rect2  color:#fff;
-
-    %% Adding Subgraphs for Local and Remote
+ %% Adding Subgraphs for Local and Remote
     subgraph Local
         A
         B
@@ -67,6 +50,27 @@ graph LR
     subgraph Remote
         D
     end
+
+    %% Defining Nodes
+    D -->|fetch| C
+    
+    A[working directory] -->|add| B[staging area]
+    B -->|commit| C[local repo]
+    C -->|push| D[(remote repo)]
+
+    %% Defining Additional Actions
+
+    %% Styling
+    classDef local, fill:#faa200;
+    class A,B local;
+    classDef local_rem, fill:#f4c200;
+    class X local_rem;
+    classDef rem,  fill:#017d61;
+    class C rem
+    classDef could,  fill:#004749;
+    class D cloud;
+    classDef other,  fill:#191c2f;
+    class X other;
 
 ```
 

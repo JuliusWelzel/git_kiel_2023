@@ -371,19 +371,19 @@ Julius Welzel
     %% Defining Nodes
     A[working directory] --&gt;|add| B[staging area]
     B --&gt;|commit| C[local repo]
-    C --&gt;|push| D[remote repo]
+    C --&gt;|push| D[(remote repo)]
 
     %% Defining Additional Actions
     B --&gt;|merge| C
     C --&gt;|fetch| D
 
     %% Styling
+    classDef rect, fill:#f96;
     class A,B,C,D rect;
-    classDef rect color:#fff, stroke:#d62728;
+    classDef rect1, fill:#ffffff;
     class C rect1;
-    classDef rect1 color:#fff;
+    classDef rect2,  fill:#ffffff;
     class D rect2;
-    classDef rect2  color:#fff;
 
     %% Adding Subgraphs for Local and Remote
     subgraph Local
