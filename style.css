@@ -1,0 +1,23 @@
+.custom-red {
+    color: #DA727E; /* Replace with your desired color value */
+}
+
+.custom-yellow {
+    color: #FFBC67; /* Replace with your desired color value */
+}
+
+.custom-blue {
+    color: #455C7B; /* Replace with your desired color value */
+}
+
+.local {
+    color: #a3e3a6; /* Replace with your desired color value */
+}
+
+.remote {
+    color: #87CEFA; /* Replace with your desired color value */
+}
+
+.commit {
+    color: #017d61; /* Replace with your desired color value */
+}
