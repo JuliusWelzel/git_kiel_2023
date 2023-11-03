@@ -10,9 +10,6 @@ format:
         preview-links: auto
         smaller: true
         css: style.css
-    html: 
-        mermaid: 
-            theme: forest
 ---
 
 ## Introducing Git and GitHub: Your New Best Friend
