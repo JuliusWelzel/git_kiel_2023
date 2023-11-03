@@ -9,7 +9,10 @@ format:
             buttons: false
         preview-links: auto
         smaller: true
-style: style.css
+        css: style.css
+    html: 
+        mermaid: 
+            theme: forest
 ---
 
 ## Introducing Git and GitHub: Your New Best Friend
@@ -17,74 +20,32 @@ style: style.css
 Git:
 
 - Version Control: Tracks and manages changes to files
-- Local Repository: A local storage of your files's history (no more *text_version1.doc*, *text_version2.doc*, *text_versionfinal.doc*, *text_versionfinalfinal.doc*)
+- [**Local Repository**]{.local}: A local storage of your files's history (no more *text_version1.doc*, *text_version2.doc*, *text_versionfinal.doc*, *text_versionfinalfinal.doc*)
 - Commits: Snapshots of changes which you want to keep
 
 GitHub:
 
-- Remote Hosting: Online platform for storing and sharing Git repositories.
+- [**Remote Hosting**]{.remote}: Online platform for storing and sharing Git repositories.
 - Pull Requests: Propose changes to projects.
 - Branches: Different versions of a project.
 
 ---
 
-## Overview
-
-![](pics/git-overview.png)
-
-
----
-
 ## Git Workflow
 
-```{mermaid}	
-graph LR
-
- %% Adding Subgraphs for Local and Remote
-    subgraph Local
-        A
-        B
-        C
-    end
-
-    subgraph Remote
-        D
-    end
-
-    %% Defining Nodes
-    D -->|fetch| C
-    
-    A[working directory] -->|add| B[staging area]
-    B -->|commit| C[local repo]
-    C -->|push| D[(remote repo)]
-
-    %% Defining Additional Actions
-
-    %% Styling
-    classDef local, fill:#faa200;
-    class A,B local;
-    classDef local_rem, fill:#f4c200;
-    class X local_rem;
-    classDef rem,  fill:#017d61;
-    class C rem
-    classDef could,  fill:#004749;
-    class D cloud;
-    classDef other,  fill:#191c2f;
-    class X other;
-
-```
+![](pics/git-workflow.png)
 
 ---
 
-## Git Workflow: Local Environment
-
-The Git workflow involves several steps, divided between the local environment and the remote repository.
+## Git Workflow: [Local]{.local} 
 
 1. Local Environment:
 
     - Working Directory: This is where your files live before they are staged.
-    - Staging Area: Files are added to the staging area before they are committed.
     - Once files are committed, they reside in the local repository.
+    - You HAVE to write commit messages for every [**commit**]{.commit}.
+
+
 
 2. Operations:
 
@@ -94,9 +55,9 @@ The Git workflow involves several steps, divided between the local environment a
 
 ---
 
-## Git Workflow: Remote Repository
+## Git Workflow: [Remote]{.remote}
 
-This is where your commits are stored after they have been pushed.
+This cloud (GitHub) stores the commits after they have been pushed.
 
 Operations:
 
@@ -107,32 +68,39 @@ The workflow typically goes from making changes in the **working directory**, co
 
 ---
 
-## Initiating Git: Let's Get Started
+## Collaborating on GitHub
 
-- `git init`: Think of this as your way of telling Git, "Hey, Git, be my friend!"
-- Initializing a new Git repository is like opening a diary, but cooler!
-
----
-
-## Clone: Copy-Paste for Grown-Ups
-
-- `git clone <repository_url>`: It's like getting a copy of your friend's cool toy.
-- No more, "Can I borrow your toy?" Just clone it!
+![](pics/git-overview.png){fig-align="center"}
 
 ---
 
-## Commit: Saving the Day
 
-- `git add <file>`: Staging files is like packing your backpack for an adventure.
-- `git commit -m "Commit message"`: Think of this as writing a note about your adventure in your diary. "Today, I slayed some code dragons!"
+## README.md and structure
 
----
+::: columns
 
-## Push and Pull: The Tug of War
+::: {.column width="50%"}
+- A README.md file is a text file that introduces and explains a project.
+- It is the first thing people see when they visit your repository.
+- It should contain a description of the project, brief explanaition of the analysis, and an overview of the data directory
+- It should also contain a your contact information (Mail)
+- [Merles Thesis](https://github.com/MMarieSchuckart/Masters_Thesis) is a good example of how to to documentation.
+:::
 
-- `git push origin <branch_name>`: Pushing is like sending your diary to your secret lair in the cloud.
-- `git pull origin <branch_name>`: Pulling is like getting back your diary when you're ready for more adventures.
+::: {.column width="50%"}
+Example directory:
 
+```	
+├── README.md
+├── data
+│   ├── raw
+│   └── processed
+├── docs
+├── scripts
+└── src
+```
+:::
+:::
 
 ---
 

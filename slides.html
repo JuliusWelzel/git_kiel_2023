@@ -31,6 +31,7 @@
     }
   </style>
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="style.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -321,9 +322,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="slides_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="slides_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="slides_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -346,71 +344,28 @@ Julius Welzel
 <p>Git:</p>
 <ul>
 <li>Version Control: Tracks and manages changes to files</li>
-<li>Local Repository: A local storage of your files’s history (no more <em>text_version1.doc</em>, <em>text_version2.doc</em>, <em>text_versionfinal.doc</em>, <em>text_versionfinalfinal.doc</em>)</li>
+<li><span class="local"><strong>Local Repository</strong></span>: A local storage of your files’s history (no more <em>text_version1.doc</em>, <em>text_version2.doc</em>, <em>text_versionfinal.doc</em>, <em>text_versionfinalfinal.doc</em>)</li>
 <li>Commits: Snapshots of changes which you want to keep</li>
 </ul>
 <p>GitHub:</p>
 <ul>
-<li>Remote Hosting: Online platform for storing and sharing Git repositories.</li>
+<li><span class="remote"><strong>Remote Hosting</strong></span>: Online platform for storing and sharing Git repositories.</li>
 <li>Pull Requests: Propose changes to projects.</li>
 <li>Branches: Different versions of a project.</li>
 </ul>
 </section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
-
-<img data-src="pics/git-overview.png" class="r-stretch"></section>
 <section id="git-workflow" class="slide level2">
 <h2>Git Workflow</h2>
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph LR
 
-    %% Defining Nodes
-    A[working directory] --&gt;|add| B[staging area]
-    B --&gt;|commit| C[local repo]
-    C --&gt;|push| D[(remote repo)]
-
-    %% Defining Additional Actions
-    B --&gt;|merge| C
-    C --&gt;|fetch| D
-
-    %% Styling
-    classDef rect, fill:#f96;
-    class A,B,C,D rect;
-    classDef rect1, fill:#ffffff;
-    class C rect1;
-    classDef rect2,  fill:#ffffff;
-    class D rect2;
-
-    %% Adding Subgraphs for Local and Remote
-    subgraph Local
-        A
-        B
-        C
-    end
-
-    subgraph Remote
-        D
-    end
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="git-workflow-local-environment" class="slide level2">
-<h2>Git Workflow: Local Environment</h2>
-<p>The Git workflow involves several steps, divided between the local environment and the remote repository.</p>
+<img data-src="pics/git-workflow.png" class="r-stretch"></section>
+<section id="git-workflow-local" class="slide level2">
+<h2>Git Workflow: <span class="local">Local</span></h2>
 <ol type="1">
 <li><p>Local Environment:</p>
 <ul>
 <li>Working Directory: This is where your files live before they are staged.</li>
-<li>Staging Area: Files are added to the staging area before they are committed.</li>
 <li>Once files are committed, they reside in the local repository.</li>
+<li>You HAVE to write commit messages for every <span class="commit"><strong>commit</strong></span>.</li>
 </ul></li>
 <li><p>Operations:</p>
 <ul>
@@ -420,9 +375,9 @@ Julius Welzel
 </ul></li>
 </ol>
 </section>
-<section id="git-workflow-remote-repository" class="slide level2">
-<h2>Git Workflow: Remote Repository</h2>
-<p>This is where your commits are stored after they have been pushed.</p>
+<section id="git-workflow-remote" class="slide level2">
+<h2>Git Workflow: <span class="remote">Remote</span></h2>
+<p>This cloud (GitHub) stores the commits after they have been pushed.</p>
 <p>Operations:</p>
 <ul>
 <li><code>push</code>- Sends commits from the <strong>local repo</strong> to the <strong>remote repo</strong>.</li>
@@ -430,33 +385,32 @@ Julius Welzel
 </ul>
 <p>The workflow typically goes from making changes in the <strong>working directory</strong>, committing them to the <strong>local repo</strong>, and finally pushing them to the <strong>remote repo</strong>.</p>
 </section>
-<section id="initiating-git-lets-get-started" class="slide level2">
-<h2>Initiating Git: Let’s Get Started</h2>
+<section id="collaborating-on-github" class="slide level2">
+<h2>Collaborating on GitHub</h2>
+
+<img data-src="pics/git-overview.png" class="r-stretch quarto-figure-center"></section>
+<section id="readme.md-and-structure" class="slide level2">
+<h2>README.md and structure</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li><code>git init</code>: Think of this as your way of telling Git, “Hey, Git, be my friend!”</li>
-<li>Initializing a new Git repository is like opening a diary, but cooler!</li>
+<li>A README.md file is a text file that introduces and explains a project.</li>
+<li>It is the first thing people see when they visit your repository.</li>
+<li>It should contain a description of the project, brief explanaition of the analysis, and an overview of the data directory</li>
+<li>It should also contain a your contact information (Mail)</li>
+<li><a href="https://github.com/MMarieSchuckart/Masters_Thesis">Merles Thesis</a> is a good example of how to to documentation.</li>
 </ul>
-</section>
-<section id="clone-copy-paste-for-grown-ups" class="slide level2">
-<h2>Clone: Copy-Paste for Grown-Ups</h2>
-<ul>
-<li><code>git clone &lt;repository_url&gt;</code>: It’s like getting a copy of your friend’s cool toy.</li>
-<li>No more, “Can I borrow your toy?” Just clone it!</li>
-</ul>
-</section>
-<section id="commit-saving-the-day" class="slide level2">
-<h2>Commit: Saving the Day</h2>
-<ul>
-<li><code>git add &lt;file&gt;</code>: Staging files is like packing your backpack for an adventure.</li>
-<li><code>git commit -m "Commit message"</code>: Think of this as writing a note about your adventure in your diary. “Today, I slayed some code dragons!”</li>
-</ul>
-</section>
-<section id="push-and-pull-the-tug-of-war" class="slide level2">
-<h2>Push and Pull: The Tug of War</h2>
-<ul>
-<li><code>git push origin &lt;branch_name&gt;</code>: Pushing is like sending your diary to your secret lair in the cloud.</li>
-<li><code>git pull origin &lt;branch_name&gt;</code>: Pulling is like getting back your diary when you’re ready for more adventures.</li>
-</ul>
+</div><div class="column" style="width:50%;">
+<p>Example directory:</p>
+<pre><code>├── README.md
+├── data
+│   ├── raw
+│   └── processed
+├── docs
+├── scripts
+└── src</code></pre>
+</div>
+</div>
 </section>
 <section id="conclusion-welcome-to-the-git-world" class="slide level2">
 <h2>Conclusion: Welcome to the Git World!</h2>

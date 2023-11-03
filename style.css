@@ -1,33 +1,23 @@
-h1, h2 {
-    color: #ffab40; /* Orange */
+.custom-red {
+    color: #DA727E; /* Replace with your desired color value */
 }
 
-h3 {
-    color: #ff66b2; /* Pink */
+.custom-yellow {
+    color: #FFBC67; /* Replace with your desired color value */
 }
 
-h4 {
-    color: #4db8ff; /* Light Blue */
+.custom-blue {
+    color: #455C7B; /* Replace with your desired color value */
 }
 
-h5 {
-    color: #99ff66; /* Green */
+.local {
+    color: #a3e3a6; /* Replace with your desired color value */
 }
 
-h6 {
-    color: #ffff4d; /* Yellow */
-}
-
-ul, ol {
-    color: #ffffff;
-}
-
-code {
-    color: #ffab40; /* Orange */
+.remote {
+    color: #87CEFA; /* Replace with your desired color value */
 }
 
 .commit {
-    color: #DA727E; /* Orange */
+    color: #017d61; /* Replace with your desired color value */
 }
-
-
