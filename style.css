@@ -21,3 +21,7 @@
 .commit {
     color: #017d61; /* Replace with your desired color value */
 }
+
+.quarto-title-author-name {
+    font-size: 18px;
+}
