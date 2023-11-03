@@ -81,7 +81,7 @@ The workflow typically goes from making changes in the **working directory**, co
 - It is the first thing people see when they visit your repository.
 - It should contain a description of the project, brief explanaition of the analysis, and an overview of the data directory
 - It should also contain a your contact information (Mail)
-- [Merles Thesis](https://github.com/MMarieSchuckart/Masters_Thesis) is a good example of how to to documentation.
+- [Merles Thesis](https://github.com/MMarieSchuckart/Masters_Thesis) is a good example of how to do documentation.
 :::
 
 ::: {.column width="50%"}
@@ -96,6 +96,8 @@ Example directory:
 ├── scripts
 └── src
 ```
+
+Check out [The Good Research Code Handbook](https://goodresearch.dev/setup) for more details.
 :::
 :::
 
